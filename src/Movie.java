@@ -7,6 +7,7 @@ public class Movie {
     private String genre;
     private int length;
     private double rating; // will start at 100. whenever someone rates you take their rating and minus the left over from the 100 default
+    private int ratingCount;
 
     public Movie(String title, String genre, int length){
         this.id = incId++;
@@ -14,6 +15,7 @@ public class Movie {
         this.genre = genre;
         this.length = length;
         this.rating = 100;
+        this.ratingCount = 0;
     }
 
     //getters
@@ -27,10 +29,13 @@ public class Movie {
         return genre;
     }
     public int getLength(){
-        return id;
+        return length;
     }
     public double getRating(){
         return rating;
+    }
+    public int getRatingCount(){
+        return ratingCount;
     }
     //setters
     public void setTitle(String title){
@@ -42,23 +47,27 @@ public class Movie {
     public void setLength(int length){
         this.length = length;
     }
-    public void ratingCalc(double userRating){
 
+    //rating
+    public void addRating(double userRating){
+        if(ratingCount == 0){
+            rating = userRating;
+        } else{
+            rating = (rating * ratingCount + userRating) / (ratingCount + 1);
+        }
+        ratingCount++;  
     }
-
-
-
-
 
 
     @Override
-    public String toString(){
-        return "|ID: " + id + 
-                "|Title: " + title +
-                "|Genre: " + genre +
-                "|Length: " + length +
-                "|Rating: " + rating;
+    public String toString() {
+        return "|ID: " + id +
+            "|Title: " + title +
+            "|Genre: " + genre +
+            "|Length: " + length +
+            "|Rating: " + String.format("%.2f", rating);
     }
+
 
 
 }
