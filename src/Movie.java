@@ -52,6 +52,9 @@ public class Movie {
     public void setLength(int length){
         this.length = length;
     }
+    public void setYear(int year){
+        this.year = year;
+    }
 
     //rating
     public void addRating(double userRating){
