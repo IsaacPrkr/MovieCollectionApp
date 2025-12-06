@@ -5,14 +5,16 @@ public class Movie {
     private int id;
     private String title;
     private String genre;
+    private int year;
     private int length;
     private double rating; // will start at 100. whenever someone rates you take their rating and minus the left over from the 100 default
     private int ratingCount;
 
-    public Movie(String title, String genre, int length){
+    public Movie(String title, String genre, int length, int year){
         this.id = incId++;
         this.title = title;
         this.genre = genre;
+        this.year = year;
         this.length = length;
         this.rating = 100;
         this.ratingCount = 0;
@@ -27,6 +29,9 @@ public class Movie {
     }
     public String getGenre(){
         return genre;
+    }
+    public int getYear(){
+        return year;
     }
     public int getLength(){
         return length;
@@ -64,6 +69,7 @@ public class Movie {
         return "|ID: " + id +
             "|Title: " + title +
             "|Genre: " + genre +
+            "|Year: " + year +
             "|Length: " + length +
             "|Rating: " + String.format("%.2f", rating);
     }
