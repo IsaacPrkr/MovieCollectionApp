@@ -70,11 +70,11 @@ public class Movie {
     @Override
     public String toString() {
         return "|ID: " + id +
-            "|Title: " + title +
-            "|Genre: " + genre +
-            "|Year: " + year +
-            "|Length: " + length +
-            "|Rating: " + String.format("%.2f", rating);
+            " |Title: " + title +
+            " |Genre: " + genre +
+            " |Year: " + year +
+            " |Length: " + length +
+            " |Rating: " + String.format("%.2f", rating);
     }
 
 
