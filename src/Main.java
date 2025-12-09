@@ -40,6 +40,7 @@ public class Main{
             System.out.println("1. Check out movies...");
             System.out.println("2. Add a movie");
             System.out.println("3. Exit");
+            System.out.println("\n ");
             int choice = scanner.nextInt();
 
             switch(choice){
@@ -67,32 +68,77 @@ public class Main{
                             movies.listMovies();
                             break;
                         case 2:
-                            System.out.println("Enter the title you'd like to search for... ");
+                            System.out.println("\nEnter the title you'd like to search for... ");
 
                             String searchTitle = scanner.nextLine();
-                            System.out.println("Searching for movies with your title...");
+                            System.out.println("\nSearching for movies with your title...");
                             movies.listByTitle(searchTitle);
                             break;
                         case 3:
-                            System.out.println("Enter the year you'd like to search for... ");
+                            System.out.println("\nEnter the year you'd like to search for... ");
 
                             int searchyear = scanner.nextInt();
                             scanner.nextLine();
 
-                            System.out.println("Searching for movies with your year... ");
+                            System.out.println("\nSearching for movies with your year... ");
 
                             movies.listByYear(searchyear);
                             break;
                         case 4:
-                            System.out.println("Enter the first year you'd like to start the search... ");
+                            System.out.println("\nEnter the first year you'd like to start the search... ");
                             int firstYearSearch = scanner.nextInt();
                             scanner.nextLine();
                             System.out.println("Enter the second year you'd like to finish the search...");
                             int secondYearSearch = scanner.nextInt();
 
-                            System.out.println("Searching for the movies...");
+                            System.out.println("\nSearching for the movies...");
                             movies.listBetweenYears(firstYearSearch, secondYearSearch);
-                        
+                            break;
+                        case 5:
+                            System.out.println("\nEnter the genre you'd like to search for...");
+                            String genreSearch = scanner.nextLine();
+                            System.out.println("\nSearching for movies with your genre...");
+                            movies.listByGenre(genreSearch);
+                            break;
+                        case 6:
+                            System.out.println("\nEnter the rating you'd like to search for...");
+                            double ratingSearchAbove = scanner.nextDouble();
+                            System.out.println("\nSearching for movies with your rating and above...");
+                            movies.listRatingAbove(ratingSearchAbove);
+                            break;
+                        case 7:
+                            System.out.println("\nEnter the rating you'd like to search for...");
+                            double ratingSearchBelow = scanner.nextDouble();
+                            System.out.println("\nSearching for movies with your rating and below...");
+                            movies.listRatingBelow(ratingSearchBelow);
+                            break;
+                        case 8:
+                            System.out.println("\nEnter the movie's title...");
+                            String checkRating = scanner.nextLine();
+                            System.out.println("\nSearching for movie's rating...");
+                            System.out.print("The rating is: ");
+                            movies.listRatingOfMovie(checkRating);
+                            break;
+                        case 9:
+                            System.out.println("\nEnter the title of the movie you'd like to check rating count of...");
+                            String checkRatingCount = scanner.nextLine();
+                            System.out.println("\nSearching for your movie...");
+                            movies.listRatingCount(checkRatingCount);
+                            break;
+                        case 10:
+                            System.out.println("\nEnter the length in minutes...");
+                            int movieLengthSearch = scanner.nextInt();
+                            System.out.println("\nSearching for movie lengths...");
+                            movies.listByLengthAbove(movieLengthSearch);
+                            break;
+                        case 11:
+                            System.out.println("\nEnter the length in minutes...");
+                            int movieLengthSearchBelow = scanner.nextInt();
+                            System.out.println("\nSearching for movie lengths...");
+                            movies.listByLengthBelow(movieLengthSearchBelow);
+                            break;
+                        case 12:
+                            break;
                     }
                 break;
             }
