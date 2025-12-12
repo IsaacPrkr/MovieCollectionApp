@@ -34,6 +34,14 @@ public class Main{
         movies.addMovie(m10);
 
 
+        /*
+        Need to add movie rating
+        Renting movies?
+        Saving movies to text file
+        Login/Register System with text file?
+         */
+
+
         while (true) { 
             System.out.println("\n-Netflix");
             System.out.println("See options below");
@@ -42,6 +50,7 @@ public class Main{
             System.out.println("3. Exit");
             System.out.println("\n ");
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch(choice){
                 case 1:
@@ -139,8 +148,36 @@ public class Main{
                             break;
                         case 12:
                             break;
-                    }
-                break;
+                    } 
+                    break;
+
+                case 2:
+                    System.out.println("Please enter the following information...");
+
+                    System.out.println("The movie title: ");
+                    String movieTitle = scanner.nextLine();
+
+                    System.out.println("\nThe movie genre: ");
+                    String movieGenre = scanner.nextLine();  
+                    
+                    System.out.println("\nThe year the movie was released: ");
+                    int movieYear = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("\nThe length in minutes of the movie: ");
+                    int movieLength = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Adding Movie...");
+                    System.out.println("Successfully added!");
+                    System.out.println("| " + movieTitle + " | " + movieGenre + " | " + movieYear + " | " + movieLength);
+
+                    Movie movie = new Movie(movieTitle, movieGenre, movieLength, movieYear);
+                    movies.addMovie(movie);
+                    break;
+                case 3:
+                    System.out.println("Goodbye...");
+                    return;
             }
         }
 
